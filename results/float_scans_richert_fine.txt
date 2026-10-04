@@ -1,0 +1,24 @@
+﻿kappa=1.0: A fitted from limit = 3.56214, known closed form = 3.56214; F(30)=1.000000, f(30)=1.000000
+   s=1.0: F=3.5621  f=0.0000  f/F=0.0000
+   s=1.5: F=2.3748  f=0.0000  f/F=0.0000
+   s=2.0: F=1.7811  f=0.0000  f/F=0.0000
+   s=2.5: F=1.4249  f=0.5777  f/F=0.4055
+   s=3.0: F=1.1874  f=0.8230  f/F=0.6931
+   s=4.0: F=1.0216  f=0.9784  f/F=0.9576
+   s=6.0: F=1.0001  f=0.9999  f/F=0.9998
+kappa=0.5: A fitted from limit = 1.50590, known closed form = 1.50590; F(30)=1.000000, f(30)=1.000000
+   s=1.0: F=1.5059  f=0.0000  f/F=0.0000
+   s=1.5: F=1.2296  f=0.8096  f/F=0.6585
+   s=2.0: F=1.0648  f=0.9385  f/F=0.8814
+   s=2.5: F=1.0150  f=0.9826  f/F=0.9681
+   s=3.0: F=1.0037  f=0.9966  f/F=0.9929
+   s=4.0: F=1.0001  f=0.9999  f/F=0.9997
+   s=6.0: F=1.0000  f=1.0000  f/F=1.0000
+linear check f(3) vs 2e^g log2/3: 0.8230302173441096 0.8230302166019934
+semi-linear check f(2) vs sqrt(e^g/(2pi))*2*arccosh(sqrt2): 0.9385142734384969 0.938514273438497
+K=4.0: Richert k=9: delta=0.10, alpha=0.007, lam=0.150, beta1=0.30, net kept=+0.0863
+K=4.0: Richert k=10: delta=0.10, alpha=0.004, lam=0.148, beta1=0.24, net kept=+0.1230
+K=4.0: Richert k=11: delta=0.09, alpha=0.002, lam=0.117, beta1=0.29, net kept=+0.1801
+K=5.0: Richert k=11: delta=0.08, alpha=0.004, lam=0.121, beta1=0.27, net kept=+0.1048
+K=5.0: Richert k=12: delta=0.08, alpha=0.003, lam=0.126, beta1=0.20, net kept=+0.1245
+K=5.0: Richert k=13: delta=0.07, alpha=0.002, lam=0.115, beta1=0.19, net kept=+0.1563

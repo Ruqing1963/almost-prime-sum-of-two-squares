@@ -1,0 +1,23 @@
+﻿kappa=1.0: A fitted from limit = 3.56214, known closed form = 3.56214; F(30)=1.000000, f(30)=1.000000
+   s=1.0: F=3.5621  f=0.0000  f/F=0.0000
+   s=1.5: F=2.3748  f=0.0000  f/F=0.0000
+   s=2.0: F=1.7811  f=0.0000  f/F=0.0000
+   s=2.5: F=1.4249  f=0.5777  f/F=0.4055
+   s=3.0: F=1.1874  f=0.8230  f/F=0.6931
+   s=4.0: F=1.0216  f=0.9784  f/F=0.9576
+   s=6.0: F=1.0001  f=0.9999  f/F=0.9998
+kappa=0.5: A fitted from limit = 1.50590, known closed form = 1.50590; F(30)=1.000000, f(30)=1.000000
+   s=1.0: F=1.5059  f=0.0000  f/F=0.0000
+   s=1.5: F=1.2296  f=0.8096  f/F=0.6585
+   s=2.0: F=1.0648  f=0.9385  f/F=0.8814
+   s=2.5: F=1.0150  f=0.9826  f/F=0.9681
+   s=3.0: F=1.0037  f=0.9966  f/F=0.9929
+   s=4.0: F=1.0001  f=0.9999  f/F=0.9997
+   s=6.0: F=1.0000  f=1.0000  f/F=1.0000
+linear check f(3) vs 2e^g log2/3: 0.8230302173441096 0.8230302166019934
+semi-linear check f(2) vs sqrt(e^g/(2pi))*2*arccosh(sqrt2): 0.9385142734384969 0.938514273438497
+K=4.0: no weights   -> smallest k = 24  (delta=0.15, alpha=0.0400, net=+0.0007);  net at k=28: +0.1393, k=30: +0.1960
+K=4.5: no weights   -> smallest k = 28  (delta=0.13, alpha=0.0345, net=+0.0009);  net at k=28: +0.0009, k=30: +0.0589
+K=5.0: no weights   -> smallest k = 33  (delta=0.12, alpha=0.0295, net=+0.0291);  net at k=28: +nan, k=30: +nan
+K=4.0: Richert      -> smallest k = 9  (delta=0.10, alpha=0.0100, lam=0.168, beta1=0.24999999999999992, net kept=+0.0659)
+K=5.0: Richert      -> smallest k = 11  (delta=0.08, alpha=0.0100, lam=0.151, beta1=0.18999999999999995, net kept=+0.0517)

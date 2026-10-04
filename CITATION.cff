@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "On primes p for which N-p is an almost prime sum of two squares"
+authors:
+  - family-names: Chen
+    given-names: Ruqing
+    affiliation: "GUT Geoservice Inc., Montreal, Canada"
+    email: ruqing@hotmail.com
+date-released: 2026-10-04
+doi: 10.5281/zenodo.23133054
+license: MIT
+type: software
+keywords:
+  - semi-linear sieve
+  - vector sieve
+  - Chen's theorem
+  - sums of two squares
+  - almost primes
+  - interval arithmetic
