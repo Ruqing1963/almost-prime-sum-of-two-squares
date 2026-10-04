@@ -1,6 +1,6 @@
 # On primes *p* for which *N − p* is an almost prime sum of two squares, and other class number one forms
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23133054.svg)](https://doi.org/10.5281/zenodo.23133054)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23136112.svg)](https://doi.org/10.5281/zenodo.23136112)
 
 **Author:** Ruqing Chen, GUT Geoservice Inc., Montreal, Canada (ruqing@hotmail.com)
 
@@ -109,8 +109,8 @@ those are the analytic content of the paper.
   author = {Chen, Ruqing},
   title  = {On primes $p$ for which $N-p$ is an almost prime sum of two squares, and other class number one forms},
   year   = {2026},
-  doi    = {10.5281/zenodo.23133054},
-  url    = {https://doi.org/10.5281/zenodo.23133054}
+  doi    = {10.5281/zenodo.23136112},
+  url    = {https://doi.org/10.5281/zenodo.23136112}
 }
 ```
 
