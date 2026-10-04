@@ -21,7 +21,8 @@
 \newcommand{\Sg}{\mathfrak{S}}
 \newcommand{\li}{\operatorname{li}}
 
-\title[Almost prime sums of two squares]{On primes $p$ for which $N-p$ is an almost prime sum of two squares}
+\title[Almost prime values of class number one forms]{On primes $p$ for which $N-p$ is an almost prime sum
+of two squares, and other class number one forms}
 \author{Ruqing Chen}
 \address{GUT Geoservice Inc., Montreal, Canada}
 \email{ruqing@hotmail.com}
@@ -36,6 +37,10 @@ $\gg \Sg(N)N/(\log N)^2$. The proof follows the vector sieve framework of Nath a
 semi-linear sieves at the Bombieri--Vinogradov level of distribution with Richert's logarithmic weights.
 Integers with two large prime factors $\equiv 3 \pmod 4$, which escape the semi-linear sieve, are removed by
 a switching argument. The final numerical inequality is verified with outward-rounded interval arithmetic.
+The same argument applies to the principal form of each of the nine imaginary quadratic fields of class
+number one: for every such discriminant $\Delta$, $N-p$ is represented by the principal form of
+discriminant $\Delta$ and has at most nine prime factors (ten when $\Delta=-3$ and $N\equiv1\pmod 3$) for
+$\gg_\Delta\Sg(N)N/(\log N)^2$ primes $p\le N$.
 \end{abstract}
 
 \maketitle
@@ -65,6 +70,26 @@ where $\Sg(N)=2\prod_{\ell>2}\bigl(1-(\ell-1)^{-2}\bigr)\prod_{\ell\mid N,\ \ell
 is the binary Goldbach singular series. The constant $N_0$ is ineffective.
 \end{theorem}
 
+The method uses only the facts that ``$n$ is a sum of two squares'' is determined by the parity of the
+exponents of the primes in one half of the residue classes of a fixed modulus, and that this parity can be
+controlled by a congruence condition on $p$. Both facts persist for the principal form of every imaginary
+quadratic field of class number one.
+
+\begin{theorem}\label{thm:general}
+Let $\Delta<0$ be a fundamental discriminant with class number $h(\Delta)=1$, that is
+$\Delta\in\{-3,-4,-7,-8,-11,-19,-43,-67,-163\}$, and let $Q_\Delta$ be the principal binary quadratic form
+of discriminant $\Delta$. For every sufficiently large even integer $N$,
+\[
+\#\{p\le N:\ N-p=Q_\Delta(x,y)\ \text{for some } x,y\in\mathbb Z,\ \Omega(N-p)\le k_\Delta(N)\}
+\ \gg_\Delta\ \Sg(N)\,\frac{N}{(\log N)^2},
+\]
+where $k_\Delta(N)=9$, except that $k_{-3}(N)=10$ when $N\equiv 1\pmod 3$.
+\end{theorem}
+
+For $\Delta=-4$ this is Theorem~\ref{thm:main}. The proof is given in Section~\ref{sec:general}; the
+exceptional case reflects the fact that $x^2+xy+y^2$ takes no values $\equiv 2\pmod 3$, so that for $N\equiv1\pmod 3$
+every represented value of $N-p$ (with $p\ne 3$) is divisible by $3$.
+
 \subsection*{Method}
 Write $n=N-p$ and restrict to $p\equiv N-1\pmod 4$, so that $n\equiv 1\pmod 4$. If $n$ has no prime
 factor $q\equiv 3\pmod 4$ at all, then $n$ is a sum of two squares. With the Bombieri--Vinogradov level
@@ -74,11 +99,13 @@ $y=N^{1/2-\delta}$. Since $n\equiv 1\pmod 4$, a survivor then has either no prim
 or exactly two, both $\ge y$; the latter are counted from above by switching the roles of $p$ and
 $q_1q_2m$ (Section~\ref{sec:switch}). The number of prime factors is controlled by Richert's logarithmic
 weights (Section~\ref{sec:weights}). The resulting numerical inequality is verified rigorously in
-Section~\ref{sec:numerics}.
+Section~\ref{sec:numerics}. Sections~\ref{sec:weights}--\ref{sec:numerics} are written for $\Delta=-4$;
+Section~\ref{sec:general} lists the changes needed for the other discriminants and shows that, after
+normalisation, they lead to the same numerical inequality.
 
 \begin{remark}
-To the best of the author's knowledge, the explicit statement of Theorem~\ref{thm:main} has not appeared
-in the literature. The analytic architecture is an adaptation of the vector sieve method of Nath and Xie
+To the best of the author's knowledge, the explicit statements of Theorems~\ref{thm:main}
+and~\ref{thm:general} have not appeared in the literature. The analytic architecture is an adaptation of the vector sieve method of Nath and Xie
 \cite{NathXie}. The ingredient specific to the present setting is the treatment of the $s=1$ threshold of
 the semi-linear sieve by truncated sieving at $y=N^{1/2-\delta}$, followed by the switching step of
 Section~\ref{sec:switch}.
@@ -182,7 +209,9 @@ $N^{1/2}(\log N)^{-B}$; see also \cite[Theorem~0]{BFI} for an explicit statement
 %=====================================================================================================
 \section{The weighted vector sieve}\label{sec:weights}
 
-Fix parameters $0<\alpha<2\delta<1/2$, $\delta<1/4$, $0<\lambda$, $\alpha<\beta_1\le 1/2$, and put
+In this section and the next, $\Delta=-4$; the role of the congruence $p\equiv N-1\pmod 4$ is taken over
+by $p\equiv a\pmod M$ in Section~\ref{sec:general}, and that of $\cP_3$, $\cP_1$ by the inert and split
+primes of $\mathbb Q(\sqrt\Delta)$. Fix parameters $0<\alpha<2\delta<1/2$, $\delta<1/4$, $0<\lambda$, $\alpha<\beta_1\le 1/2$, and put
 \[
 y=N^{1/2-\delta},\qquad z_0=N^{\alpha},\qquad y_1=N^{\beta_1},\qquad P=P(\cP_3;y)\,P(\cP_1;z_0).
 \]
@@ -286,6 +315,8 @@ and $X\sim N/(2\log N)$, which gives the stated normalisation.
 %=====================================================================================================
 \section{Switching}\label{sec:switch}
 
+For general $\Delta$ the switched set acquires a factor $2/\varphi(M)$, the same factor as the main term
+of Proposition~\ref{prop:W}; see Section~\ref{sec:general}.
 Let $\cE$ be the set of $p\le N$, $p\equiv N-1\pmod 4$, such that $n=N-p$ satisfies $(n,P)=1$ and falls
 under Lemma~\ref{lem:structure}(ii). Let $\cT$ be the set of triples $(q_1,q_2,m)$ with $q_1<q_2$,
 $q_i\in\cP_3$, $q_1\ge y$, $q_1q_2m\le N$, and $m$ composed of primes of $\cP_1$ that are $\ge z_0$
@@ -395,7 +426,7 @@ The constant $N_0$ is ineffective because of the Siegel--Walfisz theorem underly
 and~\ref{lem:conv}.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:float}
 Floating point computations (not certified) indicate that without Richert's weights ($\lambda=0$) the
 same method gives $\Omega(n)\le 24$, and that with the switching constant $5$ in place of $4$ it still gives
 $\Omega(n)\le 11$; see Figure~\ref{fig:comparison}.
@@ -409,6 +440,113 @@ and with Richert's weights, for several values of the switching constant $K$. On
 ($K=4$, Richert's weights) is certified (Lemma~\ref{lem:numerics}); the other values are illustrative.}
 \label{fig:comparison}
 \end{figure}
+
+%=====================================================================================================
+\section{Other class number one discriminants}\label{sec:general}
+
+Let $\Delta$ be as in Theorem~\ref{thm:general}, $K=\mathbb Q(\sqrt\Delta)$, $\chi=\chi_\Delta$ the
+Kronecker symbol, and
+\[
+\cP^{+}=\{q\nmid\Delta:\chi(q)=1\},\qquad \cP^{-}=\{q\nmid\Delta:\chi(q)=-1\}
+\]
+the split and inert primes. Each of $\cP^\pm$ has density $1/2$ among the primes, by the prime number
+theorem in progressions modulo $|\Delta|$. The principal forms are $x^2+y^2$ ($\Delta=-4$), $x^2+2y^2$
+($\Delta=-8$) and $x^2+xy+\frac{1-\Delta}{4}y^2$ for odd $\Delta$.
+
+\begin{lemma}[Representation criterion]\label{lem:repr}
+Let $n\ge1$. Then $n=Q_\Delta(x,y)$ is solvable if and only if $v_q(n)$ is even for every $q\in\cP^-$.
+The set of represented integers is closed under multiplication, and contains $q^2$ for $q\in\cP^-$ and $3$
+when $\Delta=-3$.
+\end{lemma}
+
+\begin{proof}
+Since $h(\Delta)=1$, the number of representations is $r_\Delta(n)=w_\Delta\sum_{d\mid n}\chi(d)$, where
+$w_\Delta$ is the number of units of $\mathcal O_K$ (see e.g.\ \cite{Cox}). The sum is multiplicative,
+with local factor $1$ at ramified primes, $v_q(n)+1$ at split primes, and $1$ or $0$ at an inert prime
+according as $v_q(n)$ is even or odd. The represented integers are the norms of elements of the principal
+ideal domain $\mathcal O_K$, which is closed under multiplication; $q^2=N(q)$ and $3=N(\sqrt{-3})$.
+\end{proof}
+
+For $n$ coprime to $\Delta$ we have $\chi(n)=(-1)^{\#\{\text{inert prime factors of } n\}}$, counted with
+multiplicity. Hence prescribing $\chi(n)=1$ forces an even number of inert prime factors; this generalises
+the condition $n\equiv 1\pmod 4$ used for $\Delta=-4$.
+
+\begin{lemma}[Admissible residue classes]\label{lem:admissible}
+Let $N$ be even. There are a modulus $M$ and a residue $a$ with $(a,M)=1$ such that for every prime
+$p\equiv a\pmod M$ the integer $n=N-p$ factors as $n=n_\Delta u$ with $n_\Delta\in\{1,3\}$ fixed,
+$(u,\Delta)=1$ and $\chi(u)=1$. One may take $M=|\Delta|$ and $n_\Delta=1$, except when $\Delta=-3$ and
+$N\equiv1\pmod 3$, in which case $M=9$ and $n_\Delta=3$.
+\end{lemma}
+
+\begin{proof}
+For $\Delta=-4$ and $\Delta=-8$ take $a\equiv N-1\pmod{|\Delta|}$; then $n\equiv1\pmod{|\Delta|}$ and
+$\chi(n)=1$. For $\Delta=-q$ with $q\in\{7,11,19,43,67,163\}$ prime, $\chi(n)=(n/q)$ is the Legendre
+symbol. Among the $(q-1)/2\ge3$ nonzero quadratic residues $r$ modulo $q$ at most one satisfies $r\equiv N$,
+so we can choose $r$ with $a=N-r\not\equiv0\pmod q$. For $\Delta=-3$, $\chi(n)=(n/3)$: if $N\equiv0$ take
+$a\equiv2$, if $N\equiv2$ take $a\equiv1\pmod 3$; in both cases $n\equiv1\pmod 3$. If $N\equiv1\pmod 3$ take
+$a\equiv N-3\pmod 9$, which is prime to $3$; then $n\equiv3\pmod 9$, so $n=3u$ with $u\equiv1\pmod3$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:general}]
+We indicate the changes to Sections~\ref{sec:weights}--\ref{sec:numerics}. Let $M$, $a$ and $n_\Delta$
+be as in Lemma~\ref{lem:admissible}, put $M'=\mathrm{lcm}(2,M)$, and let
+\[
+\cA_\Delta=\{n=N-p:\ p\le N,\ p\equiv a\ (\mathrm{mod}\ M)\},\qquad X=\li(N)/\varphi(M).
+\]
+Since $n$ is odd and $(n/n_\Delta,M)=1$, only primes $q\nmid M'$ can divide $u=n/n_\Delta$, and for them
+$q\mid n\Leftrightarrow q\mid u$. Lemma~\ref{lem:BV} holds with the moduli $4d$ replaced by $Md$.
+
+\emph{Sieve.} Replace $\cP_3$ by $\cP^-$ and $\cP_1$ by $\cP^+$, both restricted to primes $q\nmid M'$.
+Every prime $q<z_0$ with $q\nmid M'$ lies in one of them, and both have sifting density $1/2$, so
+Lemmas~\ref{lem:semi} and~\ref{lem:vector} apply unchanged.
+
+\emph{Structure.} For a survivor, $\chi(u)=1$, so the number of inert prime factors of $u$ is even; they
+are all $\ge y$ and $y^4>N$, so there are $0$ or $2$ of them. In case (i) of Lemma~\ref{lem:structure}, $u$
+is represented by Lemma~\ref{lem:repr}, and so is $n=n_\Delta u$. Case (ii) is as before, with
+$q_1,q_2\in\cP^-$ and $m$ composed of primes of $\cP^+$.
+
+\emph{Prime factors.} Lemma~\ref{lem:omega} applied to $u$ gives $\Omega(u)\le 9$, hence
+$\Omega(n)\le 9+\Omega(n_\Delta)$.
+
+\emph{Normalisation.} Put $\Sg_{M'}(N)=\prod_{\ell\nmid M'}(1-g(\ell))(1-1/\ell)^{-1}$. By Mertens'
+theorem,
+\[
+\prod_{\substack{q<z_0\\ q\nmid M'}}(1-g(q))\sim\frac{M'}{\varphi(M')}\,\Sg_{M'}(N)\,\frac{e^{-\gamma}}{\log z_0},
+\]
+so the main term of Proposition~\ref{prop:W} becomes
+\[
+\frac{1}{\varphi(M)}\cdot\frac{M'}{\varphi(M')}\,\Sg_{M'}(N)\cdot
+\frac{e^{-\gamma}(L-\lambda R)}{\sqrt{\alpha(1/2-\delta)}}\cdot\frac{N}{(\log N)^2}.
+\]
+In the switching step, $\cB=\{N-n_\Delta t\}$ with $t=q_1q_2m$ and $N-n_\Delta t\equiv a\pmod M$. If
+$n_\Delta=1$, then $\chi(t)=1$ automatically and $t$ is equidistributed among the $\varphi(M)/2$ classes
+modulo $M$ with $\chi=1$, so a proportion $2/\varphi(M)$ of the triples satisfies the congruence. If
+$n_\Delta=3$, the congruence is automatic, but $t\le N/3$, and $1/3=2/\varphi(9)$. In both cases
+$|\cB|\le(2/\varphi(M)+o(1))\,c(\delta,\alpha)N/\log N$. Since $g_\cB(\ell)=0$ for $\ell\mid M'$,
+$V_\cB(D)\sim(M'/\varphi(M'))\Sg_{M'}(N)e^{-\gamma}/\log D$, and
+\[
+\#\cE\le\frac{1}{\varphi(M)}\cdot\frac{M'}{\varphi(M')}\,\Sg_{M'}(N)\cdot\bigl(8c(\delta,\alpha)+o(1)\bigr)
+\cdot\frac{N}{(\log N)^2}.
+\]
+Both bounds carry the same factor $\varphi(M)^{-1}(M'/\varphi(M'))\Sg_{M'}(N)$. For $\Delta=-4$ this
+factor equals $\Sg(N)/2$, and the two displays reduce to those of Sections~\ref{sec:weights}
+and~\ref{sec:switch}. Dividing by it therefore yields exactly the quantity $\mathrm{net}$ of
+Section~\ref{sec:numerics}, which is independent of $\Delta$, and Lemma~\ref{lem:numerics} applies with
+the same parameters. Hence the number of admissible primes $p$ is at least
+\[
+\bigl(0.106+o(1)\bigr)\,\frac{1}{\varphi(M)}\cdot\frac{M'}{\varphi(M')}\,\Sg_{M'}(N)\,\frac{N}{(\log N)^2}
+\ \gg_\Delta\ \Sg(N)\frac{N}{(\log N)^2},
+\]
+since $\Sg_{M'}(N)$ and $\Sg(N)$ differ only in the finitely many local factors at primes dividing
+$M'$.
+\end{proof}
+
+\begin{remark}
+The same argument should apply to every negative discriminant with one class per genus (Euler's idoneal
+numbers), by prescribing in addition the genus characters of $u$ through the residue class of $p$. We do
+not pursue this here. Non-fundamental discriminants such as $-12$ ($x^2+3y^2$) require a separate
+treatment of the primes dividing the conductor.
+\end{remark}
 
 \section*{Data and code availability}
 The verification script \texttt{certify.py}, the exploratory scripts and their outputs are archived at
@@ -427,6 +565,7 @@ and verified by the author.
 moduli}, Acta Math. \textbf{156} (1986), 203--251.
 \bibitem{BF} J.~Br\"udern, \'E.~Fouvry, \emph{Lagrange's four squares theorem with almost prime variables},
 J. reine angew. Math. \textbf{454} (1994), 59--96.
+\bibitem{Cox} D.~A.~Cox, \emph{Primes of the Form $x^2+ny^2$}, 2nd ed., Wiley, 2013.
 \bibitem{Chen} J.~R.~Chen, \emph{On the representation of a larger even integer as the sum of a prime and
 the product of at most two primes}, Sci. Sinica \textbf{16} (1973), 157--176.
 \bibitem{OC} J.~Friedlander, H.~Iwaniec, \emph{Opera de Cribro}, AMS Colloquium Publications \textbf{57},
