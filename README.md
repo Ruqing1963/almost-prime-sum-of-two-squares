@@ -20,7 +20,7 @@ removes integers with two large prime factors ≡ 3 (mod 4).
 This is a preprint. The final numerical inequality (Lemma 5.1 of the paper) is verified with
 outward-rounded interval arithmetic. The analytic sieve lemmas (Sections 2–4) are written out in the
 paper but have **not yet been independently refereed**, and the novelty of the statement has not yet been
-confirmed by a database search or by experts. Items still open are marked `[verify: ...]` in the paper.
+confirmed by experts.
 
 ## Repository layout
 

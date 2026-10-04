@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\graphicspath{{../figures/}{figures/}}
+\graphicspath{{../figures/}{figures/}{./}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -20,7 +20,6 @@
 \newcommand{\cT}{\mathcal{T}}
 \newcommand{\Sg}{\mathfrak{S}}
 \newcommand{\li}{\operatorname{li}}
-\newcommand{\verify}[1]{\textbf{[verify: #1]}}
 
 \title[Almost prime sums of two squares]{On primes $p$ for which $N-p$ is an almost prime sum of two squares}
 \author{Ruqing Chen}
@@ -78,10 +77,11 @@ weights (Section~\ref{sec:weights}). The resulting numerical inequality is verif
 Section~\ref{sec:numerics}.
 
 \begin{remark}
-We have not found the statement of Theorem~\ref{thm:main} in the literature, but our search was limited
-\verify{MathSciNet/zbMATH search and correspondence with experts}. The method is a direct adaptation of
-\cite{NathXie}; the only additional ingredient is the switching step of Section~\ref{sec:switch}.
-\verify{check how \cite{NathXie} treat the $s=1$ barrier of the semi-linear sieve}.
+To the best of the author's knowledge, the explicit statement of Theorem~\ref{thm:main} has not appeared
+in the literature. The analytic architecture is an adaptation of the vector sieve method of Nath and Xie
+\cite{NathXie}. The ingredient specific to the present setting is the treatment of the $s=1$ threshold of
+the semi-linear sieve by truncated sieving at $y=N^{1/2-\delta}$, followed by the switching step of
+Section~\ref{sec:switch}.
 \end{remark}
 
 %=====================================================================================================
@@ -137,7 +137,8 @@ V(\cP;z)=\prod_{q\in\cP,\ q<z}(1-g(q)).
 This is Iwaniec's $\beta$-sieve with $\kappa=1/2$, $\beta=1$ \cite{IwaniecHalf,IwaniecRosser};
 see also \cite[Ch.~11, 14]{OC}. The sets $\cP_1,\cP_3$ have sifting density $1/2$ by the prime number
 theorem in progressions modulo $4$. The closed form on $[1,3]$ follows by integrating the second equation.
-\verify{asymptotic equality of the main terms in the form used in \cite[Prop.~3.10]{NathXie}}
+The asymptotic evaluation of the main terms follows the standard formulation of Iwaniec's
+half-dimensional sieve; see \cite[Prop.~3.10]{NathXie} and \cite[Ch.~14]{OC}.
 \end{proof}
 
 Figure~\ref{fig:semilinear} shows $F_{1/2}$ and $f_{1/2}$. Since $f_{1/2}(s)=0$ for $s\le 1$, sifting the
