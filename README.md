@@ -39,9 +39,9 @@ code/
 results/
   certify_output.txt      output of certify.py
   float_scans_*.txt       outputs of the exploratory scans
-figures/
-  semilinear_sieve_functions.png
-  smallest_k_by_scheme.png
+figures/                  PNG (README) and vector PDF (paper, Figures 1-2)
+  semilinear_sieve_functions.{png,pdf}
+  smallest_k_by_scheme.{png,pdf}
 ```
 
 ## Reproducing the results

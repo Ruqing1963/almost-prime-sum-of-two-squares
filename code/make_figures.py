@@ -1,7 +1,7 @@
 """
 Figures for the repository (illustrative, floating point; not part of the certified computation).
-  figures/semilinear_sieve_functions.png : F_{1/2}, f_{1/2} (kappa = 1/2, beta = 1)
-  figures/smallest_k_by_scheme.png       : smallest k found by the floating-point scans for each scheme
+  figures/semilinear_sieve_functions.{png,pdf} : F_{1/2}, f_{1/2} (kappa = 1/2, beta = 1)
+  figures/smallest_k_by_scheme.{png,pdf}       : smallest k found by the floating-point scans for each scheme
 Run from the repository root:  python code/make_figures.py
 """
 import os
@@ -21,6 +21,14 @@ ns = {"__file__": os.path.join(EXP, "richert.py")}
 exec(src, ns)
 
 os.makedirs(os.path.join(ROOT, "figures"), exist_ok=True)
+plt.rcParams["pdf.fonttype"] = 42          # embed TrueType fonts in the PDF figures
+
+
+def save(fig, name):
+    # titles are omitted on purpose: in the paper the caption carries the explanation
+    fig.savefig(os.path.join(ROOT, "figures", name + ".png"), dpi=200)
+    fig.savefig(os.path.join(ROOT, "figures", name + ".pdf"), format="pdf", bbox_inches="tight")
+
 
 s = np.linspace(0.3, 5, 600)
 fig, ax = plt.subplots(figsize=(6, 3.6))
@@ -29,8 +37,7 @@ ax.plot(s, ns["fs"](s), label=r"$f_{1/2}(s)$")
 ax.axhline(1, color="0.6", lw=0.8)
 ax.axvline(1, color="0.6", lw=0.8, ls=":")
 ax.set_xlabel("s"); ax.set_ylim(0, 2.8); ax.legend(frameon=False)
-ax.set_title(r"Semi-linear sieve functions ($\kappa=1/2$, $\beta=1$): $f_{1/2}(s)=0$ for $s\leq 1$", fontsize=9)
-fig.tight_layout(); fig.savefig(os.path.join(ROOT, "figures", "semilinear_sieve_functions.png"), dpi=200)
+fig.tight_layout(); save(fig, "semilinear_sieve_functions")
 
 labels, values = [], []
 for K in (4.0, 4.5, 5.0):
@@ -44,8 +51,6 @@ bars = ax.bar(labels, values, color=["0.65"] * 3 + ["C0"] * 2)
 ax.bar_label(bars)
 ax.set_ylim(0, max(values) + 5)
 ax.set_ylabel(r"smallest $k$ with positive net yield")
-ax.set_title("Floating-point parameter scans (illustrative; only K=4, Richert, k=9 is certified)", fontsize=8)
-fig.tight_layout()
-fig.savefig(os.path.join(ROOT, "figures", "smallest_k_by_scheme.png"), dpi=200)
+fig.tight_layout(); save(fig, "smallest_k_by_scheme")
 print("smallest k:", dict(zip([l.replace(chr(10), ' ') for l in labels], values)))
 print("figures written to", os.path.join(ROOT, "figures"))

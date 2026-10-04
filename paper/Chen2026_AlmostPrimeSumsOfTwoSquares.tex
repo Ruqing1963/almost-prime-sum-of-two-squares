@@ -3,6 +3,8 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{graphicx}
+\graphicspath{{../figures/}{figures/}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -137,6 +139,19 @@ see also \cite[Ch.~11, 14]{OC}. The sets $\cP_1,\cP_3$ have sifting density $1/2
 theorem in progressions modulo $4$. The closed form on $[1,3]$ follows by integrating the second equation.
 \verify{asymptotic equality of the main terms in the form used in \cite[Prop.~3.10]{NathXie}}
 \end{proof}
+
+Figure~\ref{fig:semilinear} shows $F_{1/2}$ and $f_{1/2}$. Since $f_{1/2}(s)=0$ for $s\le 1$, sifting the
+primes $q\equiv 3\pmod 4$ up to $N^{1/2}$ with level $N^{1/2}$ gives no lower bound; this is why we sift
+them only up to $N^{1/2-\delta}$ in Section~\ref{sec:weights}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth]{semilinear_sieve_functions.pdf}
+\caption{The semi-linear sieve functions $F_{1/2}(s)$ and $f_{1/2}(s)$ (dimension $\kappa=1/2$, sieving
+limit $\beta=1$). The lower bound function vanishes for $s\le 1$, so at the Bombieri--Vinogradov level
+$\theta=1/2$ the primes $q\equiv 3\pmod 4$ cannot be sifted all the way up to $N^{1/2}$.}
+\label{fig:semilinear}
+\end{figure}
 
 \begin{lemma}[Vector sieve]\label{lem:vector}
 Let $a,b\in\{0,1\}$ and $a^-\le a\le a^+$, $b^-\le b\le b^+$ with $a^+,b^+\ge 0$. Then
@@ -382,8 +397,17 @@ and~\ref{lem:conv}.
 \begin{remark}
 Floating point computations (not certified) indicate that without Richert's weights ($\lambda=0$) the
 same method gives $\Omega(n)\le 24$, and that with the switching constant $5$ in place of $4$ it still gives
-$\Omega(n)\le 11$.
+$\Omega(n)\le 11$; see Figure~\ref{fig:comparison}.
 \end{remark}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth]{smallest_k_by_scheme.pdf}
+\caption{Smallest bound $k$ for $\Omega(N-p)$ obtained by floating-point parameter scans, without weights
+and with Richert's weights, for several values of the switching constant $K$. Only the value $k=9$
+($K=4$, Richert's weights) is certified (Lemma~\ref{lem:numerics}); the other values are illustrative.}
+\label{fig:comparison}
+\end{figure}
 
 \section*{Data and code availability}
 The verification script \texttt{certify.py}, the exploratory scripts and their outputs are archived at
